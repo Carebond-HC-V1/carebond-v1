@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@getbrevo/brevo": "^1.0.1",
+    "express": "^4.21.1",
+    "sib-api-v3-sdk": "^8.5.0"
+  }
+}
