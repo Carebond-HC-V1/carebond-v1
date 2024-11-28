@@ -254,3 +254,62 @@ body {
     background-color: #0056b3;
   }
   
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    margin-right: 0px !important;
+    a {
+      font-size: 10px !important;
+    }
+  }
+
+  .main-content {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .callback-form {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .callback-container {
+    margin: 10px;
+    width: 85%;
+  }
+
+  .emergency-services {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .emergency-services .image img {
+    max-width: 80%;
+  }
+
+  .emergency-services .description {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .callback-form input {
+    font-size: 16px;
+  }
+
+  .callback-form .submit-btn {
+    font-size: 14px;
+    padding: 12px 24px;
+  }
+
+  .popup-content {
+    width: 80%;
+  }
+}
