@@ -35,6 +35,7 @@ app.post("/api/send-email", async (req, res) => {
     console.log(response);
     res.status(200).send({ message: "Email sent successfully!", response });
   } catch (error) {
+    console.log(error);
     res.status(500).send({ message: "Failed to send email"});
   }
 });
