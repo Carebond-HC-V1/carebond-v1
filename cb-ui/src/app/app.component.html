@@ -1,0 +1,59 @@
+<!-- app.component.html -->
+<div class="container">
+  <header class="header">
+    <div class="logo">
+      <img src="logo-transparent-png.png" alt="">
+    </div>
+    <nav class="navbar">
+      <a href="#">ABOUT US</a>
+      <a href="#">SERVICES</a>
+      <a href="#">CONTACT US</a>
+    </nav>
+  </header>
+
+  <div class="main-content">
+   <!-- callback-form.component.html -->
+<div class="callback-container">
+  <h2>GET A CALL BACK</h2>
+  <h3>IN <span class="highlight">5</span> SECONDS</h3>
+  <form (ngSubmit)="onSubmit($event)" #callbackForm="ngForm" class="callback-form">
+    <div class="form-group">
+      <input
+        type="text"
+        name="name"
+        placeholder="NAME*"
+        ngModel
+        required
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="tel"
+        name="contact"
+        placeholder="CONTACT NO.*"
+        ngModel
+        required
+      />
+    </div>
+    <button type="submit" [disabled]="!callbackForm.valid" class="submit-btn">
+      SUBMIT <span class="arrow">➔</span>
+    </button>
+  </form>
+</div>
+
+
+    <div class="emergency-services">
+      <div class="image">
+        <img src="assets/ambulance.jpg" alt="Ambulance" />
+      </div>
+      <div class="description">
+        <h2>24/7 Emergency Response Services with RED.HEALTH</h2>
+        <p>
+          Round-the-clock emergency response service that delivers excellence
+          with highly trained medical professionals and advanced data-driven
+          technology.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

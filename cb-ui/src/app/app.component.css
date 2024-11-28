@@ -1,0 +1,217 @@
+/* app.component.css */
+body {
+  margin: 0 !important;
+}
+.container {
+    font-family: monospace;
+  }
+  
+  .header {
+    display: flex;
+    background-color: #0b1059;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .logo {
+    padding: 0 20px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .logo {
+    width: 450px; /* Set the width of the container */
+    height: 130px; /* Set the height of the container */
+    overflow: hidden;
+    position: relative;
+  }
+
+  .logo img {
+    position: absolute;
+    top: -180px; /* Move the image up by 20px */
+    left: 0;
+    width: 100%;
+    height: auto;
+  }
+  
+  .navbar {
+    margin-right: 150px;
+    a {
+      font-family: monospace; /* Use the same font for consistency */
+      padding: 10px 30px;
+      border-radius: 20px;
+      outline: none;
+      font-size: 28px;
+      margin: 0 16px;
+      text-decoration: none;
+      color: white;
+    }
+  }
+
+  .nav a:last-child {
+    color: #f00;
+   }
+  
+  .book-btn {
+    color: red;
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: 1px solid grey;
+    font-weight: bold;
+  }
+  
+  .main-content {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .callback-form {
+    flex: 1;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .callback-form h2 {
+    margin-bottom: 10px;
+    margin-right: 10px;
+  }
+  
+  .callback-form .highlight {
+    color: red;
+  }
+  
+  .callback-form .form-group {
+    margin-bottom: 10px;
+    margin-right: 10px;
+  }
+  
+  .callback-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .callback-form button {
+    background-color: red;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .callback-form button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .emergency-services {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .emergency-services .image img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  
+  .emergency-services .description {
+    max-width: 500px;
+  }
+  
+  .emergency-services h2 {
+    margin-bottom: 10px;
+  }
+  /* callback-form.component.css */
+  .callback-container {
+    width: 25%;
+    margin: 50px;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    font-family: monospace;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+  
+  .callback-container h2 {
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .callback-container h3 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .callback-container .highlight {
+    color: #f00;
+    font-weight: bold;
+  }
+  
+  .callback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .callback-form .form-group {
+    position: relative;
+  }
+  
+  .callback-form input {
+      width: 90%;
+      height: 50px;
+      font-size: 50px;
+      padding: 10px 5%;
+      font-size: 20px;
+      border: 1px solid #ccc;
+      border-radius: 36px;
+      outline: none;
+  
+  }
+  
+  .callback-form input::placeholder {
+    font-size: 20px;
+    color: #888;
+  }
+  
+  .callback-form .submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+  }
+  
+  .callback-form .submit-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .callback-form .submit-btn .arrow {
+    margin-left: 10px;
+    font-size: 18px;
+  }
+  
+  .callback-form .submit-btn:hover {
+    background-color: #444;
+  }
+  
