@@ -17,7 +17,7 @@ app.use(
   })
 );
 
-const apiKey = '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';
+const apiKey = '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';
 SibApiV3Sdk.ApiClient.instance.authentications["api-key"].apiKey = apiKey;
 app.post("/api/send-email", async (req, res) => {
   const { mail, name } = req.body;
