@@ -1,7 +1,21 @@
 const express = require("express");
 const SibApiV3Sdk = require("sib-api-v3-sdk");
+const cors = require("cors");
 const app = express();
 app.use(express.json());
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With, Accept");
+  next();
+});
+app.use(
+  cors({
+    origin: "*", // Allow all origins
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allow these HTTP methods
+    allowedHeaders: "*", // Allow all headers
+  })
+);
 
 const apiKey = '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';
 SibApiV3Sdk.ApiClient.instance.authentications["api-key"].apiKey = apiKey;
