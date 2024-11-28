@@ -28,7 +28,7 @@ export class AppComponent {
 
   onSubmit(form: NgForm) {
     const { name, email } = form.value; // Fetch form data
-    this.http.post("/api/send-email", {
+    this.http.post("http://65.1.91.144:8081/api/send-email", {
       name: name,
       mail: email
     }).subscribe(()=>{
