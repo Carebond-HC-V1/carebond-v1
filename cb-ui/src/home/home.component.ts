@@ -1,4 +1,3 @@
-// app.component.ts
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
@@ -10,35 +9,41 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { Router, RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  imports: [
-    RouterModule,
+  selector: 'app-home',
+  imports: [  RouterModule,
     FormsModule,
     HttpClientModule,
     CommonModule,
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatMenuModule,
-  ],
-  
+    MatMenuModule,],
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.css'
 })
-export class AppComponent {
+export class HomeComponent {
   popupMessage: any;
   showPopup: boolean = false;
   constructor(private http: HttpClient, private router: Router) {
 
   }
-
-  corporate(): void {
-    console.log("clicked");
-    this.router.navigate(['/corporate']);
+  onSubmit(form: NgForm) {
+    const { name, email, phone } = form.value; // Fetch form data
+    this.http.post("http://65.1.91.144:8081/api/send-email", {
+      name: "name:"+ name + "phone:" + phone?phone: "N/A",
+      mail: email
+    }).subscribe(()=>{
+      this.popupMessage = `Hello ${name}, someone from our team will shortly contact.`;
+      this.showPopup = true;
+      setTimeout(() => {
+        this.showPopup = false;
+      }, 10000);
+    })
+    form.reset();
   }
 
-  home (): void {
-    this.router.navigate(['/']);
-
+  closePopup(): void{
+    this.showPopup = false;
   }
+
 }

@@ -5,56 +5,85 @@
       <img src="logo-transparent-png.png" alt="">
     </div>
     <nav class="navbar">
-      <a href="#">ABOUT US</a>
-      <a href="#">SERVICES</a>
-      <a href="#">CONTACT US</a>
+      <mat-toolbar color="primary">
+        <div mat-button class="menu-trigger" (click)="home()">
+          HOME
+        </div>
+
+        <div mat-button class="menu-trigger">
+          ABOUT US
+        </div>
+
+        <div mat-button [matMenuTriggerFor]="menu2" (mouseenter)="menuTrigger2.openMenu()"
+          #menuTrigger2="matMenuTrigger" class="menu-trigger">
+          SERVICES
+        </div>
+
+        <div mat-button class="menu-trigger">
+          CONTACT US
+        </div>
+      </mat-toolbar>
+
+      <!-- Menu 1 -->
+      <!-- <mat-menu #menu1="matMenu" class="custom-menu" [overlapTrigger]="false" (mouseleave)="menuTrigger1.closeMenu()"
+        (mouseenter)="menuTrigger1.openMenu()">
+        <button mat-menu-item>
+          <mat-icon>home</mat-icon>
+          <span>Home</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>info</mat-icon>
+          <span>About</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>contact_mail</mat-icon>
+          <span>Contact</span>
+        </button>
+      </mat-menu> -->
+
+      <!-- Menu 2 -->
+      <mat-menu #menu2="matMenu" class="custom-menu" [overlapTrigger]="false" (mouseleave)="menuTrigger2.closeMenu()"
+        (mouseenter)="menuTrigger2.openMenu()">
+        <button mat-menu-item (click)="corporate()">
+          <mat-icon>work</mat-icon>
+          <span>Corporate</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>medical_services</mat-icon>
+          <span>Hospital
+          </span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>people</mat-icon>
+          <span> Individual
+          </span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>event</mat-icon>
+          <span> Event
+          </span>
+        </button>
+      </mat-menu>
+
+      <!-- Menu 3 -->
+      <!-- <mat-menu #menu3="matMenu" class="custom-menu" [overlapTrigger]="false" (mouseleave)="menuTrigger3.closeMenu()"
+        (mouseenter)="menuTrigger3.openMenu()">
+        <button mat-menu-item>
+          <mat-icon>home</mat-icon>
+          <span>Home</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>info</mat-icon>
+          <span>About</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>contact_mail</mat-icon>
+          <span>Contact</span>
+        </button>
+      </mat-menu> -->
+
+
     </nav>
   </header>
-
-  <div class="main-content">
-    <!-- callback-form.component.html -->
-    <div class="callback-container">
-      <h2>GET A CALL BACK
-      <span class="highlight">SHORTLY</span></h2>
-      <form (ngSubmit)="onSubmit(callbackForm)" #callbackForm="ngForm" class="callback-form">
-        <div class="form-group">
-          <input type="text" name="name" placeholder="NAME*" ngModel required />
-        </div>
-        <div class="form-group">
-          <input type="email" name="email" placeholder="EMAIL*" ngModel required email />
-        </div>
-        <button type="submit" [disabled]="!callbackForm.valid" class="submit-btn">
-          SUBMIT <span class="arrow">➔</span>
-        </button>
-      </form>
-    </div>
-
-
-    <div class="emergency-services">
-      <div class="image">
-      <img style="height: 100px;width: 100px;" src="https://www.welleazy.com/wp-content/uploads/2023/09/Frame-1-3.webp" alt="Consultation">
-      </div>
-      <div class="description">
-        <h2>24/7 Emergency Response Services with CAREBOND</h2>
-        <br/>
-        <p>
-            At CAREBOND, we are committed to revolutionizing corporate healthcare by delivering innovative, accessible,
-            and comprehensive solutions tailored to the needs of modern organizations and their employees.
-            <br/>
-            With expertise in addressing the unique challenges of corporate health, we empower businesses to create
-            healthier, happier, and more productive workforces. Our solutions integrate cutting-edge technology with
-            personalized care to ensure seamless access to medical services, wellness programs, and preventive
-            healthcare.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="popup" *ngIf="showPopup">
-  <div class="popup-content">
-    <h2>Message</h2>
-    <p>{{ popupMessage }}</p>
-    <button (click)="closePopup()">Close</button>
-  </div>
+  <router-outlet></router-outlet>
 </div>

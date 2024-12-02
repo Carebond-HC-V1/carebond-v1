@@ -1,0 +1,41 @@
+<div class="service-title">
+  <mat-icon class="service-icon">{{ details.icon }}</mat-icon>
+  <h1>{{ details.title }}</h1>
+</div>
+
+<div style="padding: 0 20% 0 25%; font-size: 24px">
+  {{ details.description }}
+</div>
+
+<div>
+  <H2 class="main-title">What We Offer</H2>
+  <div class="main-title">
+    <h2 class="offer-title">
+      <mat-icon class="dot-icon">fiber_manual_record</mat-icon
+      >{{ details.offers.title }}
+    </h2>
+    <div class="offer-title">{{ details.offers.description }}</div>
+  </div>
+</div>
+<div>
+  <H2 class="main-title">Inclusions</H2>
+  <div class="main-title">
+    <div class="offer-dec" *ngFor="let inclusion of details.inclusions">
+      {{ inclusion }}
+    </div>
+  </div>
+</div>
+
+<div>
+  <H2 class="main-title">Specialized Packages</H2>
+  <div class="main-title">
+    <div *ngFor="let package of details.specializedPackages" class="offer-dec pad-l-20 pad-t-20">
+      <span class="bold">{{ package.title }}</span>
+      <span>{{ package.description }}</span>
+      <div class="offer-dec pad-l-20 pad-t-20">
+        <span class="bold">Case Study: </span>
+        <span>{{ package.caseStudy }}</span>
+      </div>
+    </div>
+  </div>
+</div>
