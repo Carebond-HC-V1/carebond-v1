@@ -377,6 +377,7 @@ mat-toolbar {
   width: 100%;
   z-index: 1000;
   color: white;
+  background-color: transparent;
 }
 
 .menu-trigger {
@@ -399,16 +400,18 @@ mat-toolbar {
   
 }
 
-::ng-deep .mat-mdc-menu-item {
+::ng-deep .mat-mdc-menu-item-text {
   height: 70px; /* Adjust the height of each menu item */
   display: flex;
   align-items: center;
+  color: #0b1059;
   font-size: 24px !important; /* Adjust font size for menu items */
 }
 
 ::ng-deep .mat-mdc-menu-item mat-icon {
   font-size: 30px;
   height: 30px !important;
+  color: #0b1059 !important;
   width: 30px !important;
 }
 
