@@ -29,7 +29,7 @@ body {
 
   .logo img {
     position: absolute;
-    top: -180px; /* Move the image up by 20px */
+    top: -100px; /* Move the image up by 20px */
     left: 0;
     width: 100%;
     height: auto;
