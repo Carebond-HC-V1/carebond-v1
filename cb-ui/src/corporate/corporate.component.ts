@@ -51,49 +51,49 @@ export const ServiceItems = [
   },
   {
     id: "CB10001",
-    title: "RED SOS BUTTON",
+    title: "CareBond SOS BUTTON",
     icon: "emergency", // Material icon
     description:
       "Seamlessly integrates with various platforms, including Android & iOS devices, apps, and IoT devices...",
   },
   {
     id: "CB10002",
-    title: "RED FAMILY PROTECT",
+    title: "CareBond FAMILY PROTECT",
     icon: "family_restroom", // Material icon
     description:
       "Monthly and annual subscriptions tailored for families residing in India, including NRIs and Indians living away...",
   },
   {
     id: "CB10003",
-    title: "RED CLINICS AND OHCS",
+    title: "CareBond CLINICS AND OHCS",
     icon: "local_hospital", // Material icon
     description:
       "Specializes in setting up Onsite Health Clinics and Occupational Health Centers tailored to client needs...",
   },
   {
     id: "CB10004",
-    title: "RED TRAININGS",
+    title: "CareBond TRAININGS",
     icon: "school", // Material icon
     description:
       "Immersive training programs encompassing CPR, first aid, and more to equip individuals with life-saving skills...",
   },
   {
     id: "CB10005",
-    title: "RED DIAGNOSTICS SUPPORT",
+    title: "CareBond DIAGNOSTICS SUPPORT",
     icon: "science", // Material icon
     description:
       "Tailor-made diagnostic solutions for corporates, facilitating timely detection and intervention...",
   },
   {
     id: "CB10006",
-    title: "RED TELEMEDICINE",
+    title: "CareBond TELEMEDICINE",
     icon: "videocam", // Material icon
     description:
       "Virtual consultations with qualified medical professionals to ensure healthcare accessibility...",
   },
   {
     id: "CB10007",
-    title: "RED PHARMACY SERVICES",
+    title: "CareBond PHARMACY SERVICES",
     icon: "local_pharmacy", // Material icon
     description:
       "On-demand delivery of medicines and pharmaceutical products, supporting chronic and emergency needs...",
