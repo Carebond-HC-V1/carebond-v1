@@ -39,3 +39,37 @@
     </div>
   </div>
 </div>
+
+<div>
+  <div class="callback-container" style="margin: 5% 20% 0 25%; width: 50%;background-color: #c7c7d1;">
+    <h1 style="padding-left: 10%; ">Enquire now
+    </h1>
+    <span style="padding-left: 10%; text-align: center;">* Get tailored insights crafted by our dedicated case managers</span>
+    <form (ngSubmit)="onSubmit(callbackForm)" #callbackForm="ngForm" class="callback-form" style="gap: 15px;">
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Member name*" ngModel required />
+      </div>
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Professional mail*" ngModel required email />
+      </div>
+      <div class="form-group">
+        <input type="tel" id="phone" placeholder="Phone number" name="phone" ngModel pattern="^[+]?[0-9]{10,15}$" />
+      </div>
+
+      <div class="form-group">
+        <input type="tel" id="phone" placeholder="Location*" name="location" ngModel required />
+      </div>
+      <button type="submit" [disabled]="!callbackForm.valid" class="submit-btn">
+        SUBMIT <span class="arrow">➔</span>
+      </button>
+    </form>
+  </div>
+</div>
+
+<div class="popup" *ngIf="showPopup">
+  <div class="popup-content">
+    <h2>Message</h2>
+    <p>{{ popupMessage }}</p>
+    <button (click)="closePopup()">Close</button>
+  </div>
+</div>

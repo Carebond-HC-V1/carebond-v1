@@ -6,3 +6,421 @@ body {
     background-color: #e6e8e7;
 }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* app.component.css */
+body {
+    margin: 0 !important;
+  }
+  .container {
+      font-family: 'Helvetica', 'Arial', sans-serif;
+    }
+    
+    .header {
+      display: flex;
+      background-color: #0b1059;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+    
+    .logo {
+      padding: 0 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  
+    .logo {
+      width: 450px; /* Set the width of the container */
+      height: 130px; /* Set the height of the container */
+      overflow: hidden;
+      position: relative;
+    }
+  
+    .logo img {
+      position: absolute;
+      top: -180px; /* Move the image up by 20px */
+      left: 0;
+      width: 100%;
+      height: auto;
+    }
+    
+    .navbar {
+      a {
+        font-family: 'Helvetica', 'Arial', sans-serif; /* Use the same font for consistency */
+        padding: 10px 30px;
+        border-radius: 20px;
+        outline: none;
+        font-size: 28px;
+        margin: 0 16px;
+        text-decoration: none;
+        color: white;
+      }
+    }
+  
+    .nav a:last-child {
+      color: #f00;
+     }
+    
+    .book-btn {
+      color: red;
+      padding: 5px 10px;
+      border-radius: 20px;
+      border: 1px solid grey;
+      font-weight: bold;
+    }
+    
+    .main-content {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+    }
+    
+    .callback-form {
+      flex: 1;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    
+    .callback-form h2 {
+      margin-bottom: 10px;
+      margin-right: 10px;
+    }
+    
+    .callback-form .highlight {
+      color: red;
+    }
+    
+    .callback-form .form-group {
+      margin-bottom: 10px;
+      margin-right: 10px;
+    }
+    
+    .callback-form input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    
+    .callback-form button {
+      background-color: red;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    
+    .callback-form button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .emergency-services {
+      margin: 5% 10%;
+      font-family: 'Helvetica', 'Arial', sans-serif;
+    }
+    
+    .emergency-services .image img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    
+    .emergency-services h2 {
+      margin-bottom: 10px;
+    }
+    /* callback-form.component.css */
+    .callback-container {
+      width: 25%;
+      margin: 50px;
+      background-color: #f8f8f8;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 15px;
+      font-family: 'Helvetica', 'Arial', sans-serif;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+    
+    .callback-container h2 {
+      font-size: 18px;
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    .callback-container h3 {
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .callback-container .highlight {
+      color: #f00;
+      font-weight: bold;
+    }
+    
+    .callback-form {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    
+    .callback-form .form-group {
+      position: relative;
+    }
+    
+    .callback-form input {
+        width: 90%;
+        height: 50px;
+        font-size: 50px;
+        padding: 10px 5%;
+        font-size: 20px;
+        border: 1px solid #ccc;
+        border-radius: 36px;
+        outline: none;
+    
+    }
+    
+    .callback-form input::placeholder {
+      font-size: 20px;
+      color: #888;
+    }
+    
+    .callback-form .submit-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 60px;
+      padding: 10px 20px;
+      background-color: #0b1059;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease;
+    }
+    
+    .callback-form .submit-btn:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .callback-form .submit-btn .arrow {
+      margin-left: 10px;
+      font-size: 18px;
+    }
+    
+    .callback-form .submit-btn:hover {
+      background-color: #444;
+    }
+    
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    
+    .popup-content {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .popup-content h2 {
+      margin: 0 0 10px;
+    }
+    
+    .popup-content button {
+      padding: 8px 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    .popup-content button:hover {
+      background-color: #0056b3;
+    }
+    
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 10px;
+      margin-right: 0px !important;
+      a {
+        font-size: 10px !important;
+      }
+    }
+  
+    .main-content {
+      flex-direction: column;
+      padding: 10px;
+    }
+  
+    .callback-form {
+      width: 100%;
+      padding: 15px;
+    }
+  
+    .callback-container {
+      margin: 10px;
+      width: 85%;
+    }
+  
+    .emergency-services {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .emergency-services .image img {
+      max-width: 80%;
+    }
+  
+    .emergency-services .description {
+      max-width: 100%;
+      text-align: center;
+    }
+  
+    .callback-form input {
+      font-size: 16px;
+    }
+  
+    .callback-form .submit-btn {
+      font-size: 14px;
+      padding: 12px 24px;
+    }
+  
+    .popup-content {
+      width: 80%;
+    }
+  }
+  .we-help-in {
+    font-size: 80px;
+    font-weight: 500;
+  }
+  
+  .description {
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+    height: 100px; /* Matches the text size */
+    font-size: 70px; /* Text size */
+    font-weight: 500;
+    line-height: 100px; /* Align text vertically */
+  }
+  
+  .wrapper {
+    border-radius: 5px;
+    position: relative;
+    height: 100%;
+    background-color: #0b1059;
+    color: white;
+  }
+  
+  .list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    animation: roll 12s infinite; /* Adjust duration: 6 items × 2s each = 12s */
+  }
+  
+  .list li {
+    height: 100px; /* Matches the .description height */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Adjust alignment if needed */
+  }
+  
+  @keyframes roll {
+    0%, 16.67% {
+      transform: translateY(0); /* Stay on the first sentence */
+    }
+    16.67%, 33.33% {
+      transform: translateY(-100px); /* Move to the second sentence */
+    }
+    33.33%, 50% {
+      transform: translateY(-200px); /* Move to the third sentence */
+    }
+    50%, 66.67% {
+      transform: translateY(-300px); /* Move to the fourth sentence */
+    }
+    66.67%, 83.33% {
+      transform: translateY(-400px); /* Move to the fifth sentence */
+    }
+    83.33%, 100% {
+      transform: translateY(-500px); /* Move to the sixth sentence */
+    }
+  }
+  .toolbar-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .spacer {
+    flex: 1 1 auto;
+  }
+  mat-toolbar {
+    position: relative;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    color: white;
+  }
+  
+  .menu-trigger {
+    font-size: 30px; /* Increase font size */
+    padding: 10px 30px; /* Add padding for a larger clickable area */
+    cursor: pointer;
+  }
+  
+  ::ng-deep .custom-menu {
+    width: 180px; /* Adjust menu container width */
+    height: 290px; /* Adjust menu container height */
+    background-color: #e6e8e7 !important;
+    color: #0b1059;
+  }
+  
+  /* Adjust the menu container position */
+  ::ng-deep .mat-mdc-menu-panel {
+    margin-top: 5px; /* Adds space between the trigger and the menu */
+    margin-left: 20px; /* Adds space between the trigger and the menu */
+    
+  }
+  
+  ::ng-deep .mat-mdc-menu-item {
+    height: 70px; /* Adjust the height of each menu item */
+    display: flex;
+    align-items: center;
+    font-size: 24px !important; /* Adjust font size for menu items */
+  }
+  
+  ::ng-deep .mat-mdc-menu-item mat-icon {
+    font-size: 30px;
+    height: 30px !important;
+    width: 30px !important;
+  }
+  
+  .mat-toolbar {
+    padding: 0 20px; /* Add padding to the toolbar */
+  }
+  
