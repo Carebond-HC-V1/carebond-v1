@@ -1,0 +1,124 @@
+<div class="service-title">
+  <mat-icon class="service-icon">{{ details.icon }}</mat-icon>
+  <h1>{{ details.title }}</h1>
+</div>
+
+<div style="padding: 0 20% 0 25%; font-size: 24px">
+  {{ details.description }}
+</div>
+
+<div>
+  <H2 class="main-title">What We Offer</H2>
+  <ng-container class="offer-dec" *ngFor="let offer of details.offers">
+    <div class="main-title">
+      <h2 class="offer-title">
+        <mat-icon class="dot-icon">fiber_manual_record</mat-icon
+        >{{ offer.title }}
+      </h2>
+      <div class="offer-title">{{ offer.description }}</div>
+    </div>
+    <ng-container *ngFor="let offerData of offer.content">
+      <div>
+        <H2 class="main-title" style="font-size: 25px;">{{ offerData.title }}</H2>
+        <div class="main-title">
+          <div
+            *ngFor="let package of offerData.data"
+            class="offer-dec pad-l-20 pad-t-20"
+          >
+            <ng-container>
+              <div class="offer-dec pad-l-20 pad-t-20">
+                <span>{{ package.title }}</span>
+                <span>{{ package.description }}</span>
+              </div>
+            </ng-container>
+
+            <ng-container *ngIf="package.data">
+              <ng-container *ngFor="let packageData of package.data">
+                <div class="offer-dec pad-l-20 pad-t-20 pd-f-80">
+                  <div>
+                    <span>{{ packageData.title }}</span>
+                    <span>{{ packageData.description }}</span>
+                  </div>
+                </div>
+              </ng-container>
+            </ng-container>
+
+            <ng-container *ngIf="!package?.data">
+              <span>{{ package }}</span>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </ng-container>
+</div>
+
+<div>
+  <div
+    class="callback-container"
+    style="margin: 5% 20% 0 25%; width: 50%; background-color: #c7c7d1"
+  >
+    <h1 style="padding-left: 10%">Enquire now</h1>
+    <span style="padding-left: 10%; text-align: center"
+      >* Get tailored insights crafted by our dedicated case managers</span
+    >
+    <form
+      (ngSubmit)="onSubmit(callbackForm)"
+      #callbackForm="ngForm"
+      class="callback-form"
+      style="gap: 15px"
+    >
+      <div class="form-group">
+        <input
+          type="text"
+          name="name"
+          placeholder="Member name*"
+          ngModel
+          required
+        />
+      </div>
+      <div class="form-group">
+        <input
+          type="email"
+          name="email"
+          placeholder="Professional mail*"
+          ngModel
+          required
+          email
+        />
+      </div>
+      <div class="form-group">
+        <input
+          type="tel"
+          id="phone"
+          placeholder="Phone number"
+          name="phone"
+          ngModel
+          pattern="^[+]?[0-9]{10,15}$"
+        />
+      </div>
+
+      <div class="form-group">
+        <input
+          type="tel"
+          id="phone"
+          placeholder="Location*"
+          name="location"
+          ngModel
+          required
+        />
+      </div>
+      <button type="submit" [disabled]="!callbackForm.valid" class="submit-btn">
+        SUBMIT <span class="arrow">➔</span>
+      </button>
+    </form>
+  </div>
+</div>
+
+<div class="popup" *ngIf="showPopup">
+  <div class="popup-content">
+    <h2>Message</h2>
+    <p>{{ popupMessage }}</p>
+    <button (click)="closePopup()">Close</button>
+  </div>
+</div>

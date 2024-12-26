@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="grid">
+      <mat-card *ngFor="let item of items" class="item-card" (click)="openCard(item)">
+        <mat-card-header>
+          <mat-icon class="item-icon">{{ item.icon }}</mat-icon>
+        </mat-card-header>
+        <mat-card-title>{{ item.title }}</mat-card-title>
+        <mat-card-content>
+          <p>{{ item.description }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  
