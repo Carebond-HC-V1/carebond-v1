@@ -1,0 +1,133 @@
+
+  
+  .dashboard-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh; /* Full viewport height */
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .summary-card {
+    flex: 30%;
+    padding: 0 5%;
+  }
+  
+  .chart-card {
+    flex: 30%;
+  }
+  
+  .employee-list-card {
+    flex: 40%; /* Takes remaining space */
+    display: flex;
+    flex-direction: column;
+    min-height: 0; /* Required for proper flex scrolling */
+  }
+  
+  .table-container {
+    flex: 1;
+    overflow-y: auto; /* Enables scrolling inside */
+    max-height: calc(100vh - 220px); /* Adjust this based on header and chart height */
+  }
+  
+  /* Ensure table takes full width */
+  table {
+    width: 100%;
+  }
+  
+  /* Sticky header for the table */
+  .mat-header-row {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 2;
+  }
+  
+  .dashboard-card {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+    width: 50%;
+    padding: 20px;
+    border: 1px solid #e0e0e0; /* Light border */
+    border-radius: 10px; /* Smooth rounded edges */
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    background: white; /* Clean background */
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  .dashboard-card:hover {
+    box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.15); /* Slightly deeper shadow on hover */
+  }
+  
+  .card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .card-section {
+    text-align: center;
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    background: #f9f9f9; /* Subtle background for sections */
+  }
+  
+  h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #0b1059;
+  }
+  
+  .value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0b1059; /* Primary color */
+  }
+  
+  .service-utilization-container {
+    width: 100%;
+    background: #fff;
+    padding: 16px;
+    border-radius: 8px;
+  }
+  
+  .service-item {
+    margin-bottom: 16px;
+    position: relative;
+  }
+  
+  .service-label {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  
+  .background-bar {
+    height: 10px !important;
+    opacity: 0.3;
+    position: absolute;
+  }
+  
+  .foreground-bar {
+    height: 10px !important;
+    position: relative;
+  }
+  .sidenav-container {
+    height: 100vh;
+  }
+  mat-sidenav {
+    width: 300px;
+  }
+  mat-toolbar {
+    background: #0b1059;
+    color: white;
+  }
+  mat-mdc-nav-list mat-mdc-list-base mdc-list {
+    font-size: 17px;
+    color: #0b1059;
+    padding: 25px 0px;
+  }

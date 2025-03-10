@@ -1,0 +1,170 @@
+<div>
+  <div class="left-nav">
+    <mat-sidenav-container class="sidenav-container">
+      <mat-sidenav #sidenav mode="side" opened>
+        <mat-nav-list>
+          <a mat-list-item (click)="menuClick('overview')">Overview</a>
+          <a mat-list-item (click)="menuClick('EHM')"
+            >Employee Health Management</a
+          >
+          <a mat-list-item (click)="menuClick('SUR')"
+            >Service Utilization and Request</a
+          >
+          <a mat-list-item (click)="menuClick('reports')"
+            >Reports and Analytics</a
+          >
+          <a mat-list-item (click)="menuClick('billing')"
+            >Billing and Subscription</a
+          >
+          <a mat-list-item (click)="menuClick('engagement')"
+            >Employee Enagement and Support</a
+          >
+          <a mat-list-item (click)="menuClick('comliance')"
+            >Complaince and Documentation</a
+          >
+        </mat-nav-list>
+      </mat-sidenav>
+
+      <mat-sidenav-content>
+        <mat-toolbar>
+          <button mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+          </button>
+          <span>My Dashboard</span>
+        </mat-toolbar>
+        <div class="content">
+          <div class="dashboard-container" style="width: 100%">
+            <div
+              style="
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+              "
+            >
+              <div style="display: flex; gap: 20px; height: 35%">
+                <mat-card class="dashboard-card">
+                  <h2>Employee Health Management</h2>
+                  <div style="position: relative; height: 100%;">
+                      <mat-card class="chart-card" style="height: 100%;">
+                        <ngx-charts-pie-chart
+                          [scheme]="colorScheme"
+                          [results]="chartData"
+                          [doughnut]="true"
+                          [legend]="true"
+                          [arcWidth]="0.35"
+                        >
+                          <!-- Controls thickness of donut -->
+                        </ngx-charts-pie-chart>
+                      </mat-card>
+                    <div
+                      class="donut-chart-center"
+                      style="position: absolute; top: 45%; left: 40%"
+                    >
+                      <h3>60</h3>
+                      <p>Total</p>
+                    </div>
+                  </div>
+                </mat-card>
+                <mat-card class="dashboard-card">
+                  <div class="card-content">
+                    <div class="service-utilization-container">
+                      <h2>Service Utilization</h2>
+                      <div class="service-utilization-container">                      
+                        <div *ngFor="let service of services" class="service-item">
+                          <div class="service-label">
+                            <span>{{ service.name }}</span>
+                            <span>{{ service.usage }} / {{ service.total }}</span>
+                          </div>
+                      
+                          <!-- Background Bar (Total Capacity) -->
+                          <mat-progress-bar 
+                            class="background-bar"
+                            mode="determinate" 
+                            color="warn"
+                            [value]="100">
+                          </mat-progress-bar>
+                      
+                          <!-- Foreground Bar (Completed Usage) -->
+                          <mat-progress-bar 
+                            class="foreground-bar"
+                            mode="determinate" 
+                            color="primary"
+                            [value]="getUtilizationPercentage(service)">
+                          </mat-progress-bar>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </mat-card>
+              </div>
+              <div style="display: flex; gap: 20px; height: 35%">
+                <mat-card class="dashboard-card">
+                  <div class="card-content">
+                    <div></div>
+                  </div>
+                </mat-card>
+                <mat-card class="dashboard-card">
+                  <div class="card-content">
+                    <div class="card-section">
+                      <h3>Total Employees Enrolled</h3>
+                      <p class="value">450</p>
+                    </div>
+                    <div class="card-section">
+                      <h3>Upcoming Health Checkups</h3>
+                      <p class="value">30</p>
+                    </div>
+                  </div>
+                </mat-card>
+              </div>
+
+              <!-- <mat-card class="summary-card">
+                <h2>Total Employees: {{ totalEmployees }}</h2>
+                <p>Booked Services: {{ bookedServices }}</p>
+                <p>Completed Services: {{ completedServices }}</p>
+                <p>Pending Services: {{ pendingServices }}</p>
+              </mat-card>
+            
+              <mat-card class="chart-card">
+                <ngx-charts-pie-chart
+                  [view]="view"
+                  [scheme]="colorScheme"
+                  [results]="chartData"
+                  [doughnut]="true"
+                  [legend]="true">
+                </ngx-charts-pie-chart>
+              </mat-card> -->
+            </div>
+
+            <!-- <mat-card class="employee-list-card">
+              <h3>Employee List</h3>
+              <div class="table-container">
+                <table mat-table [dataSource]="employees" class="mat-elevation-z8">
+                  
+                  <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef> Name </th>
+                    <td mat-cell *matCellDef="let employee">{{ employee.name }}</td>
+                  </ng-container>
+          
+                  <ng-container matColumnDef="status">
+                    <th mat-header-cell *matHeaderCellDef> Status </th>
+                    <td mat-cell *matCellDef="let employee">{{ employee.status }}</td>
+                  </ng-container>
+          
+                  <ng-container matColumnDef="diagnosis">
+                    <th mat-header-cell *matHeaderCellDef> Diagnosis </th>
+                    <td mat-cell *matCellDef="let employee">{{ employee.diagnosis }}</td>
+                  </ng-container>
+          
+                  <tr mat-header-row *matHeaderRowDef="['name', 'status', 'diagnosis']"></tr>
+                  <tr mat-row *matRowDef="let row; columns: ['name', 'status', 'diagnosis'];"></tr>
+                </table>
+              </div>
+            </mat-card> -->
+          </div>
+        </div>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+</div>

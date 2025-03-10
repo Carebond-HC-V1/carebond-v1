@@ -2,31 +2,64 @@
 <div class="container">
   <header class="header">
     <div class="logo">
-      <img src="logo-v1.jpeg" alt="">
+      <img src="logo-v1.jpeg" alt="" />
     </div>
     <nav class="navbar">
       <mat-toolbar color="primary">
-        <div mat-button class="menu-trigger" (click)="home()">
-          HOME
-        </div>
+        <div mat-button class="menu-trigger" (click)="home()">HOME</div>
 
-        <div mat-button class="menu-trigger">
-          ABOUT US
-        </div>
+        <div mat-button class="menu-trigger">ABOUT US</div>
 
-        <div mat-button [matMenuTriggerFor]="menu2" (mouseenter)="menuTrigger2.openMenu()"
-          #menuTrigger2="matMenuTrigger" class="menu-trigger">
+        <div
+          mat-button
+          [matMenuTriggerFor]="menu2"
+          (mouseenter)="menuTrigger2.openMenu()"
+          #menuTrigger2="matMenuTrigger"
+          class="menu-trigger"
+        >
           SERVICES
         </div>
 
-        <div mat-button class="menu-trigger">
-          CONTACT US
-        </div>
+        <div mat-button class="menu-trigger">CONTACT US</div>
 
-        <div (click)="login()" mat-button class="menu-trigger">
-          LOG IN
+        
+        <div
+          mat-button
+          [matMenuTriggerFor]="menu3"
+          (mouseenter)="menuTrigger3.openMenu()"
+          #menuTrigger3="matMenuTrigger"
+          class="menu-trigger"
+        >
+          MEMBER
         </div>
       </mat-toolbar>
+       <mat-menu
+        #menu3="matMenu"
+        class="custom-menu-login"
+        [overlapTrigger]="false"
+        (mouseleave)="menuTrigger3.closeMenu()"
+        (mouseenter)="menuTrigger3.openMenu()"
+      >
+      <button mat-menu-item (click)="login()">
+        <mat-icon>work</mat-icon>
+        <div
+        *ngIf="!isLoggedin"
+          (click)="login()"
+          mat-button
+          class="menu-trigger"
+        >
+          LOG IN
+        </div>
+        <div
+        *ngIf="isLoggedin"
+          (click)="LogOut()"
+          mat-button
+          class="menu-trigger"
+        >
+          LOG OUT
+        </div>
+        </button>
+      </mat-menu>
 
       <!-- Menu 1 -->
       <!-- <mat-menu #menu1="matMenu" class="custom-menu" [overlapTrigger]="false" (mouseleave)="menuTrigger1.closeMenu()"
@@ -46,26 +79,28 @@
       </mat-menu> -->
 
       <!-- Menu 2 -->
-      <mat-menu #menu2="matMenu" class="custom-menu" [overlapTrigger]="false" (mouseleave)="menuTrigger2.closeMenu()"
-        (mouseenter)="menuTrigger2.openMenu()">
+      <mat-menu
+        #menu2="matMenu"
+        class="custom-menu"
+        [overlapTrigger]="false"
+        (mouseleave)="menuTrigger2.closeMenu()"
+        (mouseenter)="menuTrigger2.openMenu()"
+      >
         <button mat-menu-item (click)="corporate()">
           <mat-icon>work</mat-icon>
           <span>Corporate</span>
         </button>
         <button mat-menu-item>
           <mat-icon>medical_services</mat-icon>
-          <span>Hospital
-          </span>
+          <span>Hospital </span>
         </button>
         <button mat-menu-item>
           <mat-icon>people</mat-icon>
-          <span> Individual
-          </span>
+          <span> Individual </span>
         </button>
         <button mat-menu-item>
           <mat-icon>event</mat-icon>
-          <span> Event
-          </span>
+          <span> Event </span>
         </button>
       </mat-menu>
 
@@ -85,8 +120,6 @@
           <span>Contact</span>
         </button>
       </mat-menu> -->
-
-
     </nav>
   </header>
   <router-outlet></router-outlet>
