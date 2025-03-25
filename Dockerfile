@@ -35,4 +35,4 @@ EXPOSE 8080
 
 # Start Keycloak with the imported realm and custom theme
 # ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start-dev", "--import-realm"]
- ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start-dev"]
+ ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start-dev", "--http-host=0.0.0.0"]
