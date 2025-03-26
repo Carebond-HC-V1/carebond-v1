@@ -9,7 +9,7 @@ ENV KC_DB=mysql \
     KC_HOSTNAME="13.201.186.154" \
     KEYCLOAK_ADMIN=admin \
     KEYCLOAK_ADMIN_PASSWORD=password \
-    KC_HTTP_ENABLED=true
+    KC_HTTP_ENABLED=true \
     KC_HOSTNAME_URL=http://13.201.186.154:8080/auth
 # Switch to root for installing utilities
 USER root
